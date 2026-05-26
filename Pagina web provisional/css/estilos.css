@@ -1,0 +1,223 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background: #f4f8fb;
+    color: #222;
+  }
+  
+  header {
+    background: #005b96;
+    color: white;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: bold;
+  }
+  
+  nav a:hover {
+    text-decoration: underline;
+  }
+  
+  .hero {
+    background: linear-gradient(rgba(0, 91, 150, 0.85), rgba(0, 91, 150, 0.85));
+    color: white;
+    text-align: center;
+    padding: 90px 20px;
+  }
+  
+  .hero h1 {
+    font-size: 42px;
+    margin-bottom: 15px;
+  }
+  
+  .hero p {
+    font-size: 20px;
+  }
+  
+  .encabezado-pagina {
+    background: #0077b6;
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+  }
+  
+  .encabezado-pagina h1 {
+    font-size: 38px;
+    margin-bottom: 10px;
+  }
+  
+  .contenedor {
+    max-width: 1100px;
+    margin: 35px auto;
+    padding: 0 20px;
+  }
+  
+  .seccion-documentos {
+    background: white;
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    border-left: 6px solid #0077b6;
+  }
+  
+  .seccion-documentos h2 {
+    color: #005b96;
+    margin-bottom: 10px;
+  }
+  
+  .seccion-documentos p {
+    margin-bottom: 18px;
+    color: #555;
+  }
+  
+  .grid-botones {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 15px;
+  }
+  
+  .boton-documento {
+    display: block;
+    background: #0096c7;
+    color: white;
+    text-decoration: none;
+    padding: 14px;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+  
+  .boton-documento:hover {
+    background: #005b96;
+    transform: translateY(-2px);
+  }
+  
+  .tarjeta-admin {
+    background: white;
+    padding: 25px;
+    border-radius: 14px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+  
+  .tarjeta-admin h2,
+  .tarjeta-admin h3 {
+    color: #005b96;
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 6px;
+    font-weight: bold;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 15px;
+  }
+  
+  textarea {
+    min-height: 90px;
+    resize: vertical;
+  }
+  
+  button {
+    background: #0077b6;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    margin: 8px 5px 8px 0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background: #005b96;
+  }
+  
+  .btn-secundario {
+    background: #555;
+  }
+  
+  .btn-peligro {
+    background: #c1121f;
+  }
+  
+  .btn-peligro:hover {
+    background: #780000;
+  }
+  
+  .documento-input {
+    background: #f1f7fb;
+    border: 1px solid #d7eaf5;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .oculto {
+    display: none;
+  }
+  
+  .mensaje-error {
+    color: #c1121f;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .mensaje-exito {
+    color: #008000;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  footer {
+    background: #003f63;
+    color: white;
+    text-align: center;
+    padding: 18px;
+    margin-top: 40px;
+  }
+  
+  @media (max-width: 700px) {
+    header {
+      flex-direction: column;
+      gap: 15px;
+    }
+  
+    nav a {
+      display: inline-block;
+      margin: 5px 8px;
+    }
+  
+    .hero h1 {
+      font-size: 30px;
+    }
+  }
