@@ -1,223 +1,240 @@
+:root {
+  --azul: #004370;
+  --vino: #9B2743;
+  --turquesa: #74C8E1;
+  --dorado: #B98E55;
+  --gris: #C5C5C5;
+  --blanco: #ffffff;
+  --fondo: #f4f8fb;
+  --texto: #1f2933;
+}
+
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background: #f4f8fb;
-    color: #222;
-  }
-  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+}
+
+header {
+  background: var(--azul);
+  color: white;
+  padding: 14px 6%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-area img {
+  width: 70px;
+  height: auto;
+}
+
+.logo-area span {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--turquesa);
+}
+
+.hero,
+.encabezado-pagina {
+  background: linear-gradient(rgba(0,67,112,.88), rgba(0,67,112,.88)),
+              url("../img/agua.jpg");
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 85px 20px;
+}
+
+.hero h1,
+.encabezado-pagina h1 {
+  font-size: clamp(32px, 5vw, 52px);
+  margin-bottom: 12px;
+}
+
+.hero p,
+.encabezado-pagina p {
+  font-size: clamp(16px, 2vw, 21px);
+}
+
+.contenedor {
+  max-width: 1150px;
+  margin: 35px auto;
+  padding: 0 20px;
+}
+
+.seccion-documentos,
+.tarjeta-admin,
+.quienes-somos {
+  background: white;
+  border-radius: 18px;
+  padding: 28px;
+  margin-bottom: 28px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  border-left: 7px solid var(--azul);
+}
+
+.seccion-documentos h2,
+.tarjeta-admin h2,
+.quienes-somos h2 {
+  color: var(--azul);
+  margin-bottom: 12px;
+}
+
+.grid-botones {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.boton-documento {
+  background: var(--azul);
+  color: white;
+  padding: 15px;
+  text-align: center;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: .3s;
+}
+
+.boton-documento:hover {
+  background: var(--vino);
+  transform: translateY(-3px);
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid var(--gris);
+  border-radius: 10px;
+  margin-bottom: 14px;
+  font-size: 15px;
+}
+
+button {
+  background: var(--azul);
+  color: white;
+  border: none;
+  padding: 13px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 6px;
+}
+
+button:hover {
+  background: var(--vino);
+}
+
+.btn-peligro {
+  background: #c1121f;
+}
+
+.btn-secundario {
+  background: #555;
+}
+
+.documento-input {
+  background: #eef8fb;
+  border: 1px solid #d5eef5;
+  padding: 18px;
+  border-radius: 14px;
+  margin-bottom: 18px;
+}
+
+.oculto {
+  display: none;
+}
+
+.quienes-somos {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 25px;
+  align-items: center;
+}
+
+.quienes-somos p {
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.links-contacto {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.links-contacto a {
+  background: var(--vino);
+  color: white;
+  text-decoration: none;
+  padding: 13px;
+  border-radius: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.links-contacto a:hover {
+  background: var(--azul);
+}
+
+footer {
+  background: var(--azul);
+  color: white;
+  text-align: center;
+  padding: 24px 15px;
+  margin-top: 40px;
+}
+
+@media (max-width: 768px) {
   header {
-    background: #005b96;
-    color: white;
-    padding: 18px 40px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .logo {
-    font-size: 22px;
-    font-weight: bold;
-  }
-  
-  nav a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    font-weight: bold;
-  }
-  
-  nav a:hover {
-    text-decoration: underline;
-  }
-  
-  .hero {
-    background: linear-gradient(rgba(0, 91, 150, 0.85), rgba(0, 91, 150, 0.85));
-    color: white;
+    justify-content: center;
     text-align: center;
-    padding: 90px 20px;
   }
-  
-  .hero h1 {
-    font-size: 42px;
-    margin-bottom: 15px;
+
+  .logo-area {
+    flex-direction: column;
   }
-  
-  .hero p {
-    font-size: 20px;
+
+  nav {
+    justify-content: center;
+    margin-top: 12px;
   }
-  
-  .encabezado-pagina {
-    background: #0077b6;
-    color: white;
-    text-align: center;
-    padding: 55px 20px;
+
+  .quienes-somos {
+    grid-template-columns: 1fr;
   }
-  
-  .encabezado-pagina h1 {
-    font-size: 38px;
-    margin-bottom: 10px;
-  }
-  
-  .contenedor {
-    max-width: 1100px;
-    margin: 35px auto;
-    padding: 0 20px;
-  }
-  
-  .seccion-documentos {
-    background: white;
-    border-radius: 14px;
-    padding: 25px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    border-left: 6px solid #0077b6;
-  }
-  
-  .seccion-documentos h2 {
-    color: #005b96;
-    margin-bottom: 10px;
-  }
-  
-  .seccion-documentos p {
-    margin-bottom: 18px;
-    color: #555;
-  }
-  
-  .grid-botones {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 15px;
-  }
-  
-  .boton-documento {
-    display: block;
-    background: #0096c7;
-    color: white;
-    text-decoration: none;
-    padding: 14px;
-    border-radius: 10px;
-    text-align: center;
-    font-weight: bold;
-    transition: 0.3s;
-  }
-  
-  .boton-documento:hover {
-    background: #005b96;
-    transform: translateY(-2px);
-  }
-  
-  .tarjeta-admin {
-    background: white;
-    padding: 25px;
-    border-radius: 14px;
-    margin-bottom: 25px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  }
-  
-  .tarjeta-admin h2,
-  .tarjeta-admin h3 {
-    color: #005b96;
-    margin-bottom: 15px;
-  }
-  
-  label {
-    display: block;
-    margin-top: 15px;
-    margin-bottom: 6px;
-    font-weight: bold;
-  }
-  
-  input,
-  textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #bbb;
-    border-radius: 8px;
-    margin-bottom: 10px;
-    font-size: 15px;
-  }
-  
-  textarea {
-    min-height: 90px;
-    resize: vertical;
-  }
-  
-  button {
-    background: #0077b6;
-    color: white;
-    border: none;
-    padding: 12px 18px;
-    margin: 8px 5px 8px 0;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-  }
-  
-  button:hover {
-    background: #005b96;
-  }
-  
-  .btn-secundario {
-    background: #555;
-  }
-  
-  .btn-peligro {
-    background: #c1121f;
-  }
-  
-  .btn-peligro:hover {
-    background: #780000;
-  }
-  
-  .documento-input {
-    background: #f1f7fb;
-    border: 1px solid #d7eaf5;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 15px;
-  }
-  
-  .oculto {
-    display: none;
-  }
-  
-  .mensaje-error {
-    color: #c1121f;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
-  .mensaje-exito {
-    color: #008000;
-    font-weight: bold;
-    margin-top: 10px;
-  }
-  
-  footer {
-    background: #003f63;
-    color: white;
-    text-align: center;
-    padding: 18px;
-    margin-top: 40px;
-  }
-  
-  @media (max-width: 700px) {
-    header {
-      flex-direction: column;
-      gap: 15px;
-    }
-  
-    nav a {
-      display: inline-block;
-      margin: 5px 8px;
-    }
-  
-    .hero h1 {
-      font-size: 30px;
-    }
-  }
+}
