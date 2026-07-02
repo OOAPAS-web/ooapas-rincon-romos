@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Quiénes somos">
+  <defs>
+    <linearGradient id="azul" x1="8" y1="6" x2="56" y2="58" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#12c6e9"/>
+      <stop offset="55%" stop-color="#008eb8"/>
+      <stop offset="100%" stop-color="#004370"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Panel superior -->
+  <rect x="17" y="5" width="30" height="15" rx="5" fill="url(#azul)"/>
+  <rect x="24" y="10" width="8" height="4" rx="2" fill="#ffffff"/>
+  <rect x="35" y="10" width="9" height="4" rx="2" fill="#ffffff"/>
+
+  <!-- Persona central -->
+  <circle cx="32" cy="31" r="7" fill="url(#azul)"/>
+  <path d="M22 55v-7c0-7 4.5-12 10-12s10 5 10 12v7Z" fill="url(#azul)"/>
+
+  <!-- Persona izquierda -->
+  <circle cx="18" cy="38" r="6" fill="url(#azul)"/>
+  <path d="M7 55v-5.8C7 43.2 12 39 18 39c3.2 0 6 1.2 8 3.2-2.7 3-4 6.8-4 11.2V55Z" fill="url(#azul)"/>
+
+  <!-- Persona derecha -->
+  <circle cx="46" cy="38" r="6" fill="url(#azul)"/>
+  <path d="M42 55v-1.6c0-4.4-1.3-8.2-4-11.2C40 40.2 42.8 39 46 39c6 0 11 4.2 11 10.2V55Z" fill="url(#azul)"/>
+
+  <!-- Base -->
+  <rect x="6" y="54" width="52" height="5" rx="2.5" fill="url(#azul)"/>
+</svg>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Administrador | OOAPAS Rincón de Romos</title>
+
+  <link rel="icon" href="assets/logo-ooapas-1.png">
+  <link rel="stylesheet" href="assets/css/global.css?v=3">
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+  <main class="admin-container">
+
+    <section id="loginAdmin" class="admin-card">
+      <h1>Acceso administrador</h1>
+      <p>Ingresa con el correo y contraseña registrados en Firebase.</p>
+
+      <form id="loginForm">
+        <label for="emailAdmin">Correo</label>
+        <input type="email" id="emailAdmin" placeholder="correo@ejemplo.com" required>
+
+        <label for="passwordAdmin">Contraseña</label>
+        <input type="password" id="passwordAdmin" placeholder="Contraseña" required>
+
+        <button type="submit">Ingresar</button>
+      </form>
+
+      <p id="mensajeLogin" class="mensaje"></p>
+    </section>
+
+    <section id="panelAdmin" style="display:none;">
+
+      <div class="admin-card">
+
+        <h1>Panel de administración</h1>
+        <p>Agrega documentos por categoría, año y mes. La página los acomodará automáticamente.</p>
+
+        <form id="formDocumento">
+
+          <label for="categoriaDocumento">Categoría</label>
+
+          <select id="categoriaDocumento" required>
+            <option value="">Selecciona una categoría</option>
+            <option value="estado-situacion-financiera">Estado de Situación Financiera</option>
+            <option value="estado-actividades">Estado de Actividades</option>
+            <option value="estado-variacion-hacienda-publica">Estado de Variación en la Hacienda Pública</option>
+            <option value="estado-flujos-efectivo">Estado de Flujos de Efectivo</option>
+            <option value="presupuesto-ingresos">Presupuesto de Ingresos</option>
+            <option value="presupuesto-egresos">Presupuesto de Egresos</option>
+            <option value="cuenta-publica">Cuenta Pública</option>
+            <option value="lgcg">Ley General de Contabilidad Gubernamental</option>
+          </select>
+
+          <label for="tituloDocumento">Nombre del archivo</label>
+          <input type="text" id="tituloDocumento" placeholder="Ejemplo: Estado financiero enero 2026" required>
+
+          <label for="urlDocumento">URL del documento</label>
+          <input type="url" id="urlDocumento" placeholder="https://drive.google.com/..." required>
+
+          <label for="anioDocumento">Año</label>
+          <input type="number" id="anioDocumento" placeholder="2026" min="2000" max="2100" required>
+
+          <label for="mesDocumento">Mes</label>
+
+          <select id="mesDocumento" required>
+            <option value="">Selecciona un mes</option>
+            <option value="Enero" data-orden="1">Enero</option>
+            <option value="Febrero" data-orden="2">Febrero</option>
+            <option value="Marzo" data-orden="3">Marzo</option>
+            <option value="Abril" data-orden="4">Abril</option>
+            <option value="Mayo" data-orden="5">Mayo</option>
+            <option value="Junio" data-orden="6">Junio</option>
+            <option value="Julio" data-orden="7">Julio</option>
+            <option value="Agosto" data-orden="8">Agosto</option>
+            <option value="Septiembre" data-orden="9">Septiembre</option>
+            <option value="Octubre" data-orden="10">Octubre</option>
+            <option value="Noviembre" data-orden="11">Noviembre</option>
+            <option value="Diciembre" data-orden="12">Diciembre</option>
+          </select>
+
+          <div class="acciones">
+            <button type="submit">Guardar documento</button>
+            <button type="button" class="btn-secundario" onclick="cerrarSesion()">Cerrar sesión</button>
+            <a class="btn-link" href="contabilidad.html">Ver contabilidad</a>
+          </div>
+
+        </form>
+
+        <p id="mensajeAdmin" class="mensaje"></p>
+
+      </div>
+
+      <section class="admin-card listado-card">
+
+        <h2>Documentos registrados</h2>
+
+        <p>Desde aquí puedes revisar y eliminar documentos guardados.</p>
+
+        <div class="filtros-admin">
+
+          <input
+            type="text"
+            id="buscarAdmin"
+            placeholder="Buscar por nombre, categoría, año o mes..."
+          >
+
+          <select id="filtroCategoriaAdmin">
+            <option value="todos">Todas las categorías</option>
+            <option value="estado-situacion-financiera">Estado de Situación Financiera</option>
+            <option value="estado-actividades">Estado de Actividades</option>
+            <option value="estado-variacion-hacienda-publica">Estado de Variación en la Hacienda Pública</option>
+            <option value="estado-flujos-efectivo">Estado de Flujos de Efectivo</option>
+            <option value="presupuesto-ingresos">Presupuesto de Ingresos</option>
+            <option value="presupuesto-egresos">Presupuesto de Egresos</option>
+            <option value="cuenta-publica">Cuenta Pública</option>
+            <option value="lgcg">Ley General de Contabilidad Gubernamental</option>
+          </select>
+
+        </div>
+
+        <div id="listaAdminDocumentos" class="lista-admin">
+          <p class="mensaje">Cargando documentos...</p>
+        </div>
+
+      </section>
+
+    </section>
+
+  </main>
+
+  <div id="modalConfirmacion" class="modal-confirmacion">
+
+    <div class="modal-caja">
+
+      <h2>Confirmar eliminación</h2>
+
+      <p>¿Seguro que deseas eliminar este documento?</p>
+
+      <div class="modal-acciones">
+        <button id="btnConfirmarEliminar" type="button">Eliminar</button>
+        <button id="btnCancelarEliminar" type="button" class="btn-secundario">Cancelar</button>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div id="footer"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/admin.js"></script>
+  <script src="js/layout.js?v=3"></script>
+</body>
+</html>

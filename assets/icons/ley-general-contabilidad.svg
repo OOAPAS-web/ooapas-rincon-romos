@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Ley General de Contabilidad">
+  <defs>
+    <linearGradient id="azul" x1="8" y1="6" x2="58" y2="60" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#12c6e9"/>
+      <stop offset="55%" stop-color="#008eb8"/>
+      <stop offset="100%" stop-color="#004370"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Documento -->
+  <path d="M12 5h32l11 11v39c0 2.2-1.8 4-4 4H12c-2.2 0-4-1.8-4-4V9c0-2.2 1.8-4 4-4Z" fill="url(#azul)"/>
+
+  <!-- Esquina doblada -->
+  <path d="M44 5v11h11Z" fill="#eaf8fc"/>
+  <path d="M44 16h11L44 5Z" fill="#bfeefa" opacity=".55"/>
+
+  <!-- Línea superior -->
+  <rect x="16" y="14" width="22" height="4" rx="2" fill="#ffffff"/>
+
+  <!-- Gráfica de barras -->
+  <rect x="17" y="34" width="7" height="13" rx="2" fill="#ffffff"/>
+  <rect x="28" y="27" width="7" height="20" rx="2" fill="#ffffff"/>
+  <rect x="39" y="20" width="7" height="27" rx="2" fill="#ffffff"/>
+
+  <!-- Líneas inferiores -->
+  <rect x="16" y="51" width="25" height="4" rx="2" fill="#ffffff"/>
+  <rect x="16" y="24" width="16" height="3.5" rx="1.8" fill="#ffffff" opacity=".95"/>
+
+  <!-- Lupa -->
+  <circle cx="45" cy="41" r="11" fill="#ffffff" stroke="url(#azul)" stroke-width="5"/>
+  <path d="M52.5 48.5 61 57" fill="none" stroke="url(#azul)" stroke-width="6" stroke-linecap="round"/>
+
+  <!-- Porcentaje -->
+  <circle cx="41" cy="38" r="2.2" fill="#004370"/>
+  <circle cx="49" cy="45" r="2.2" fill="#004370"/>
+  <path d="M50 36.5 40 47" stroke="#004370" stroke-width="3.5" stroke-linecap="round"/>
+</svg>

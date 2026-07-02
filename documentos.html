@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Documentos | OOAPAS Rincón de Romos</title>
+
+  <link rel="icon" href="assets/logo-ooapas-1.png">
+  <link rel="stylesheet" href="assets/css/global.css?v=3">
+</head>
+
+<body>
+
+  <div id="header"></div>
+
+  <main class="main-section">
+    <a href="contabilidad.html" class="btn-regresar">← Regresar a Contabilidad</a>
+
+    <section class="hero-box">
+      <span class="eyebrow">Documentos disponibles</span>
+      <h1 id="tituloCategoria">Documentos</h1>
+      <p>Consulta los archivos disponibles organizados por año y mes.</p>
+    </section>
+
+    <section id="contenedorDocumentos">
+      <p class="estado-carga">Cargando documentos...</p>
+    </section>
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+
+  <script src="js/firebase-config.js"></script>
+  <script src="js/documentos-categoria.js"></script>
+  <script src="js/layout.js?v=3"></script>
+</body>
+</html>
