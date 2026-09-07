@@ -2551,3 +2551,82 @@ button:not(.btn-eliminar):hover {
       gap: 18px !important;
     }
   }
+
+  /* =========================================================
+   PANEL - LISTADO DE CANDIDATOS
+   ========================================================= */
+
+#accesos-principales {
+  width: 100%;
+  max-width: none;
+  height: auto;
+  min-height: 0;
+
+  margin: 0;
+  padding: 28px 30px;
+
+  display: block;
+
+  box-sizing: border-box;
+}
+
+/* Título */
+#accesos-principales h2 {
+  margin: 0 0 12px 0;
+  text-align: left;
+  font-size: clamp(1.35rem, 2vw, 1.8rem);
+  line-height: 1.2;
+}
+
+/* Texto */
+#accesos-principales p {
+  margin: 0;
+  max-width: 100%;
+  text-align: left;
+  line-height: 1.6;
+}
+
+/* Botón */
+#accesos-principales .panel-action {
+  margin-top: 18px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Evita que el botón se estire */
+#accesos-principales .panel-back-link {
+  display: inline-flex;
+  width: auto;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* =========================================================
+   EVITAR QUE EL PANEL ENTRE COMO COLUMNA
+   ========================================================= */
+
+#accesos-principales {
+  grid-column: 1 / -1;
+}
+
+
+/* =========================================================
+   PANTALLAS PEQUEÑAS
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+  #accesos-principales {
+    padding: 24px 22px;
+  }
+
+  #accesos-principales h2 {
+    font-size: 1.35rem;
+  }
+
+  #accesos-principales p {
+    font-size: .95rem;
+  }
+
+}
